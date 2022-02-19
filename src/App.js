@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const responseGoogle = (response) => {
   console.log(response);
@@ -16,12 +16,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <header className="App-header">
+      <header >
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello {userProfile?.name}</p>
+        <h1 className="text-3xl font-bold">
+          Hello world!
+          <span>{userProfile?.name}</span>
+        </h1>
         <GoogleLogin
           clientId="306964030038-nmaje4copbq90ukj482qf5523o7nu57i.apps.googleusercontent.com"
           buttonText="Login"
@@ -30,6 +30,12 @@ function App() {
           cookiePolicy={'single_host_origin'}
           isSignedIn={true}
         />
+        <GoogleLogout
+          clientId="306964030038-nmaje4copbq90ukj482qf5523o7nu57i.apps.googleusercontent.com"
+          buttonText="Logout"
+          onLogoutSuccess={r => setUserProfile()}
+        >
+        </GoogleLogout>
       </header>
     </div>
   );
