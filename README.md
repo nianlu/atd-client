@@ -1,4 +1,7 @@
 
+## tailwind css
+https://tailwindcss.com/docs/guides/create-react-app
+
 
 ## initial gcp app engin
 ```
@@ -18,7 +21,7 @@ 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
 - install sql proxy
 curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
 chmod +x cloud_sql_proxy
-  + install at /Users/S/Google
+  + installed at /Users/S/Google
 - check sql instance
 gcloud sql instances list
 - turn on sql proxy (using connection name)
